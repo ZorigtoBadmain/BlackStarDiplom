@@ -1,0 +1,6 @@
+framework module Pods_BS_Diplom_2 {
+  umbrella header "Pods-BS-Diplom-2-umbrella.h"
+
+  export *
+  module * { export * }
+}
