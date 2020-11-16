@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3532465C255F97A500D3BAFA /* CategoriesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532465B255F97A500D3BAFA /* CategoriesTVC.swift */; };
 		35324661255F992300D3BAFA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324660255F992300D3BAFA /* CategoryCell.swift */; };
-		35324664255F9E9100D3BAFA /* LoadCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324663255F9E9100D3BAFA /* LoadCategories.swift */; };
+		35324664255F9E9100D3BAFA /* CategoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324663255F9E9100D3BAFA /* CategoriesLoader.swift */; };
 		35324668255FD29700D3BAFA /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324667255FD29700D3BAFA /* CategoryModel.swift */; };
 		3589928F255F8C5B004EF5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589928E255F8C5B004EF5B2 /* AppDelegate.swift */; };
 		35899291255F8C5B004EF5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35899290255F8C5B004EF5B2 /* SceneDelegate.swift */; };
@@ -24,7 +24,7 @@
 		10FCCC8CDBD3EA0E4EB9E4DD /* Pods-BS-Diplom-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BS-Diplom-2.debug.xcconfig"; path = "Target Support Files/Pods-BS-Diplom-2/Pods-BS-Diplom-2.debug.xcconfig"; sourceTree = "<group>"; };
 		3532465B255F97A500D3BAFA /* CategoriesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTVC.swift; sourceTree = "<group>"; };
 		35324660255F992300D3BAFA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		35324663255F9E9100D3BAFA /* LoadCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCategories.swift; sourceTree = "<group>"; };
+		35324663255F9E9100D3BAFA /* CategoriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesLoader.swift; sourceTree = "<group>"; };
 		35324667255FD29700D3BAFA /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		3589928B255F8C5B004EF5B2 /* BS-Diplom-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BS-Diplom-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3589928E255F8C5B004EF5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		35324666255FD26700D3BAFA /* model */ = {
 			isa = PBXGroup;
 			children = (
-				35324663255F9E9100D3BAFA /* LoadCategories.swift */,
+				35324663255F9E9100D3BAFA /* CategoriesLoader.swift */,
 				35324667255FD29700D3BAFA /* CategoryModel.swift */,
 			);
 			path = model;
@@ -130,7 +130,7 @@
 				35899287255F8C5B004EF5B2 /* Sources */,
 				35899288255F8C5B004EF5B2 /* Frameworks */,
 				35899289255F8C5B004EF5B2 /* Resources */,
-				BFA5D5209C5A3163EE5E6957 /* [CP] Embed Pods Frameworks */,
+				EBB21B6BD27C0AEF37577564 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,7 +210,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BFA5D5209C5A3163EE5E6957 /* [CP] Embed Pods Frameworks */ = {
+		EBB21B6BD27C0AEF37577564 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,7 +236,7 @@
 			files = (
 				3532465C255F97A500D3BAFA /* CategoriesTVC.swift in Sources */,
 				35324668255FD29700D3BAFA /* CategoryModel.swift in Sources */,
-				35324664255F9E9100D3BAFA /* LoadCategories.swift in Sources */,
+				35324664255F9E9100D3BAFA /* CategoriesLoader.swift in Sources */,
 				3589928F255F8C5B004EF5B2 /* AppDelegate.swift in Sources */,
 				35899291255F8C5B004EF5B2 /* SceneDelegate.swift in Sources */,
 				35324661255F992300D3BAFA /* CategoryCell.swift in Sources */,
