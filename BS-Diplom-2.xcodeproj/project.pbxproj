@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35097DBC256378D000AB5649 /* ProductCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35097DBB256378D000AB5649 /* ProductCollectionVC.swift */; };
+		35097DBF2563799700AB5649 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35097DBE2563799700AB5649 /* ProductCollectionViewCell.swift */; };
+		35097DC325637B8F00AB5649 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35097DC225637B8F00AB5649 /* Product.swift */; };
+		35097DC6256383A200AB5649 /* ProductLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35097DC5256383A200AB5649 /* ProductLoader.swift */; };
 		3532465C255F97A500D3BAFA /* CategoriesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532465B255F97A500D3BAFA /* CategoriesTVC.swift */; };
 		35324661255F992300D3BAFA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324660255F992300D3BAFA /* CategoryCell.swift */; };
 		35324664255F9E9100D3BAFA /* CategoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324663255F9E9100D3BAFA /* CategoriesLoader.swift */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		10FCCC8CDBD3EA0E4EB9E4DD /* Pods-BS-Diplom-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BS-Diplom-2.debug.xcconfig"; path = "Target Support Files/Pods-BS-Diplom-2/Pods-BS-Diplom-2.debug.xcconfig"; sourceTree = "<group>"; };
+		35097DBB256378D000AB5649 /* ProductCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionVC.swift; sourceTree = "<group>"; };
+		35097DBE2563799700AB5649 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		35097DC225637B8F00AB5649 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		35097DC5256383A200AB5649 /* ProductLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLoader.swift; sourceTree = "<group>"; };
 		3532465B255F97A500D3BAFA /* CategoriesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTVC.swift; sourceTree = "<group>"; };
 		35324660255F992300D3BAFA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		35324663255F9E9100D3BAFA /* CategoriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesLoader.swift; sourceTree = "<group>"; };
@@ -50,6 +58,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35097DBA2563789B00AB5649 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				35097DC125637B6C00AB5649 /* modelProduct */,
+				35097DBB256378D000AB5649 /* ProductCollectionVC.swift */,
+				35097DBE2563799700AB5649 /* ProductCollectionViewCell.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		35097DC125637B6C00AB5649 /* modelProduct */ = {
+			isa = PBXGroup;
+			children = (
+				35097DC225637B8F00AB5649 /* Product.swift */,
+				35097DC5256383A200AB5649 /* ProductLoader.swift */,
+			);
+			path = modelProduct;
+			sourceTree = "<group>";
+		};
 		3532465E255F97B000D3BAFA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +118,7 @@
 		3589928D255F8C5B004EF5B2 /* BS-Diplom-2 */ = {
 			isa = PBXGroup;
 			children = (
+				35097DBA2563789B00AB5649 /* Product */,
 				3589928E255F8C5B004EF5B2 /* AppDelegate.swift */,
 				35899290255F8C5B004EF5B2 /* SceneDelegate.swift */,
 				35899294255F8C5B004EF5B2 /* Main.storyboard */,
@@ -130,7 +158,7 @@
 				35899287255F8C5B004EF5B2 /* Sources */,
 				35899288255F8C5B004EF5B2 /* Frameworks */,
 				35899289255F8C5B004EF5B2 /* Resources */,
-				EBB21B6BD27C0AEF37577564 /* [CP] Embed Pods Frameworks */,
+				5B7D944A3C101B41025CBFBD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,7 +238,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EBB21B6BD27C0AEF37577564 /* [CP] Embed Pods Frameworks */ = {
+		5B7D944A3C101B41025CBFBD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -234,8 +262,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35097DBC256378D000AB5649 /* ProductCollectionVC.swift in Sources */,
 				3532465C255F97A500D3BAFA /* CategoriesTVC.swift in Sources */,
+				35097DC325637B8F00AB5649 /* Product.swift in Sources */,
+				35097DBF2563799700AB5649 /* ProductCollectionViewCell.swift in Sources */,
 				35324668255FD29700D3BAFA /* CategoryModel.swift in Sources */,
+				35097DC6256383A200AB5649 /* ProductLoader.swift in Sources */,
 				35324664255F9E9100D3BAFA /* CategoriesLoader.swift in Sources */,
 				3589928F255F8C5B004EF5B2 /* AppDelegate.swift in Sources */,
 				35899291255F8C5B004EF5B2 /* SceneDelegate.swift in Sources */,

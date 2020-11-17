@@ -22,20 +22,18 @@ class CategoriesLoader {
                 
                 DispatchQueue.main.async {
                     var categories: [Category] = []
-                    print(jsonDict)
                     
                     for (_, data) in jsonDict where data is NSDictionary {
                         if let category = Category(dict: data as! NSDictionary) {
                             if !category.image.isEmpty {
                                 categories.append(category)
                             }
-                            
+//                            categories.append(category)
                         }
                     }
                     
                     completion(categories)
 //                    SVProgressHUD.dismiss()
-                
                 }
             }
         }
