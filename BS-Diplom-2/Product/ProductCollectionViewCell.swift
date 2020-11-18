@@ -22,6 +22,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func setupCell(product: ProductList) {
         descriptionProduct.text = product.name
         let priceFormat = Int(Double(product.price)!)
-        priceProduct.text = "\(priceFormat)"
+        priceProduct.text = "\(priceFormat) руб."
     }
 }

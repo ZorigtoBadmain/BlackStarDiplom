@@ -11,6 +11,7 @@ class ProductCollectionVC: UICollectionViewController {
     
     var category_Id: String = ""
     var product: [ProductList] = []
+    var index = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,6 @@ class ProductCollectionVC: UICollectionViewController {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let w = UIScreen.main.bounds.size.width
         let h = collectionView.bounds.width
         return CGSize(width: h, height: h)
     }
@@ -59,4 +59,17 @@ class ProductCollectionVC: UICollectionViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
            return 0
        }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.index = indexPath.row
+        self.performSegue(withIdentifier: "ProductCard", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ProductCard" else { return }
+        guard let destination = segue.destination as? ProductCardVC else { return }
+        let productSelect = product[self.index]
+        destination.product = productSelect
+        destination.itemCard = product
+    }
 }
