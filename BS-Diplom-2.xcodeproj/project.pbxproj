@@ -15,10 +15,13 @@
 		35097DD72564CD9F00AB5649 /* ProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35097DD62564CD9F00AB5649 /* ProductImageCell.swift */; };
 		35097DDE2564E2F600AB5649 /* SizeColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35097DDC2564E2F600AB5649 /* SizeColorCell.swift */; };
 		35097DDF2564E2F600AB5649 /* SizeColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35097DDD2564E2F600AB5649 /* SizeColorCell.xib */; };
+		35097DE52564F32700AB5649 /* RealmDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35097DE42564F32700AB5649 /* RealmDataBase.swift */; };
 		3532465C255F97A500D3BAFA /* CategoriesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532465B255F97A500D3BAFA /* CategoriesTVC.swift */; };
 		35324661255F992300D3BAFA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324660255F992300D3BAFA /* CategoryCell.swift */; };
 		35324664255F9E9100D3BAFA /* CategoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324663255F9E9100D3BAFA /* CategoriesLoader.swift */; };
 		35324668255FD29700D3BAFA /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35324667255FD29700D3BAFA /* CategoryModel.swift */; };
+		357EAAB4256620F700A97A86 /* BasketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EAAB3256620F700A97A86 /* BasketVC.swift */; };
+		357EAAB7256621E600A97A86 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EAAB6256621E600A97A86 /* BasketCell.swift */; };
 		3589928F255F8C5B004EF5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589928E255F8C5B004EF5B2 /* AppDelegate.swift */; };
 		35899291255F8C5B004EF5B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35899290255F8C5B004EF5B2 /* SceneDelegate.swift */; };
 		35899296255F8C5B004EF5B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35899294255F8C5B004EF5B2 /* Main.storyboard */; };
@@ -38,10 +41,13 @@
 		35097DD62564CD9F00AB5649 /* ProductImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCell.swift; sourceTree = "<group>"; };
 		35097DDC2564E2F600AB5649 /* SizeColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeColorCell.swift; sourceTree = "<group>"; };
 		35097DDD2564E2F600AB5649 /* SizeColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SizeColorCell.xib; sourceTree = "<group>"; };
+		35097DE42564F32700AB5649 /* RealmDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataBase.swift; sourceTree = "<group>"; };
 		3532465B255F97A500D3BAFA /* CategoriesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTVC.swift; sourceTree = "<group>"; };
 		35324660255F992300D3BAFA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		35324663255F9E9100D3BAFA /* CategoriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesLoader.swift; sourceTree = "<group>"; };
 		35324667255FD29700D3BAFA /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		357EAAB3256620F700A97A86 /* BasketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketVC.swift; sourceTree = "<group>"; };
+		357EAAB6256621E600A97A86 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
 		3589928B255F8C5B004EF5B2 /* BS-Diplom-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BS-Diplom-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3589928E255F8C5B004EF5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35899290255F8C5B004EF5B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,24 @@
 			path = ProductCard;
 			sourceTree = "<group>";
 		};
+		35097DE22564F2EF00AB5649 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				35097DE32564F30A00AB5649 /* Model */,
+				357EAAB3256620F700A97A86 /* BasketVC.swift */,
+				357EAAB6256621E600A97A86 /* BasketCell.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		35097DE32564F30A00AB5649 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35097DE42564F32700AB5649 /* RealmDataBase.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3532465E255F97B000D3BAFA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,15 +161,16 @@
 		3589928D255F8C5B004EF5B2 /* BS-Diplom-2 */ = {
 			isa = PBXGroup;
 			children = (
+				35097DE22564F2EF00AB5649 /* Basket */,
 				35097DD12564C70900AB5649 /* ProductCard */,
 				35097DBA2563789B00AB5649 /* Product */,
+				3532465E255F97B000D3BAFA /* Categories */,
 				3589928E255F8C5B004EF5B2 /* AppDelegate.swift */,
 				35899290255F8C5B004EF5B2 /* SceneDelegate.swift */,
 				35899294255F8C5B004EF5B2 /* Main.storyboard */,
 				35899297255F8C5F004EF5B2 /* Assets.xcassets */,
 				35899299255F8C5F004EF5B2 /* LaunchScreen.storyboard */,
 				3589929C255F8C5F004EF5B2 /* Info.plist */,
-				3532465E255F97B000D3BAFA /* Categories */,
 			);
 			path = "BS-Diplom-2";
 			sourceTree = "<group>";
@@ -284,8 +309,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				35097DBC256378D000AB5649 /* ProductCollectionVC.swift in Sources */,
+				357EAAB4256620F700A97A86 /* BasketVC.swift in Sources */,
 				3532465C255F97A500D3BAFA /* CategoriesTVC.swift in Sources */,
+				35097DE52564F32700AB5649 /* RealmDataBase.swift in Sources */,
 				35097DC325637B8F00AB5649 /* Product.swift in Sources */,
+				357EAAB7256621E600A97A86 /* BasketCell.swift in Sources */,
 				35097DBF2563799700AB5649 /* ProductCollectionViewCell.swift in Sources */,
 				35324668255FD29700D3BAFA /* CategoryModel.swift in Sources */,
 				35097DD72564CD9F00AB5649 /* ProductImageCell.swift in Sources */,

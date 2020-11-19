@@ -33,4 +33,24 @@ class ProductLoader {
             }
         }
     }
+    
+    func loadImage(imageItem: String, completion: @escaping (UIImage?) -> Void) {
+        let urlString = "https://blackstarshop.ru/\(imageItem)"
+        guard let url = URL(string: urlString) else { return }
+
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                if  let data = data,
+                    let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+
+                }
+            }
+
+        }.resume()
+    }
 }

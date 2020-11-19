@@ -57,11 +57,27 @@ class ProductCardVC: UIViewController {
     }
     
     @IBAction func addToCardAction(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Выберите размер", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .actionSheet)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.view.addSubview(tableViewSizeAndColor)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
+        
+        if product.offers.count < 2 {
+            let alert1 = UIAlertController(title: "Остался один размер", message: "\(product.offers[0].size)", preferredStyle: .actionSheet)
+            let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+            let addSizeProduct = UIAlertAction(title: "Добавить в корзину", style: .default) { (action) in
+                RealmDataBase.shared.setProduct(product: self.product)
+                RealmDataBase.shared.recordProduct()
+            }
+            alert1.addAction(cancelAction)
+            alert1.addAction(addSizeProduct)
+            present(alert1, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Выберите размер", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .actionSheet)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                RealmDataBase.shared.setProduct(product: self.product)
+                RealmDataBase.shared.recordProduct()
+            })
+            alert.view.addSubview(tableViewSizeAndColor)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
     }
 }
 
@@ -106,4 +122,5 @@ extension ProductCardVC: UITableViewDelegate, UITableViewDataSource {
         selectRow = indexPath.row
         tableViewSizeAndColor.reloadData()
     }
+
 }
