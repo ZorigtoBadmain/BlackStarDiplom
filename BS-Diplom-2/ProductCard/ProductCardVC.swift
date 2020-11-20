@@ -61,19 +61,19 @@ class ProductCardVC: UIViewController {
         if product.offers.count < 2 {
             let alert1 = UIAlertController(title: "Остался один размер", message: "\(product.offers[0].size)", preferredStyle: .actionSheet)
             let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-            let addSizeProduct = UIAlertAction(title: "Добавить в корзину", style: .default) { (action) in
-                RealmDataBase.shared.setProduct(product: self.product)
-                RealmDataBase.shared.recordProduct()
-            }
+          
             alert1.addAction(cancelAction)
-            alert1.addAction(addSizeProduct)
+            
             present(alert1, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Выберите размер", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .actionSheet)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                RealmDataBase.shared.setProduct(product: self.product)
-                RealmDataBase.shared.recordProduct()
-            })
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                
+                let buyItem = ProductObject()
+                buyItem.getData(name: self.product.name, colorName: self.product.colorName, mainImageLink: self.product.mainImage, size: self.product.offers[self.selectRow].size, price: self.product.price)
+                Persistance.shared.save(item: buyItem)
+                
+            }
             alert.view.addSubview(tableViewSizeAndColor)
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
@@ -118,9 +118,12 @@ extension ProductCardVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableViewSizeAndColor.deselectRow(at: indexPath, animated: true)
-        selectRow = indexPath.row
-        tableViewSizeAndColor.reloadData()
+        
+        self.selectRow = indexPath.row
+        
+        self.tableViewSizeAndColor.deselectRow(at: indexPath, animated: true)
+        self.tableViewSizeAndColor.reloadData()
     }
+   
 
 }
