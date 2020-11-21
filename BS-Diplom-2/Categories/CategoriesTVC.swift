@@ -26,20 +26,18 @@ class CategoriesTVC: UITableViewController {
     
     var tableIndex = 0
     var categoryId = ""
+    var titleName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActivity()
         activity.startAnimating()
-        //        SVProgressHUD.show()
         
         CategoriesLoader.shared.loadCategories { data in
             
             self.categories = data
             self.tableView.reloadData()
             self.activity.stopAnimating()
-            //            SVProgressHUD.dismiss()
-            
         }
         
         backButtonItem.isEnabled = false
@@ -68,7 +66,6 @@ class CategoriesTVC: UITableViewController {
         } else {
             return subcategories.count
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,8 +98,10 @@ class CategoriesTVC: UITableViewController {
         } else if tableIndex == 1 {
             tableIndex = 0
             let product = subcategories[indexPath.row]
+            titleName = subcategories[indexPath.row].name
             self.categoryId = product.id
             self.performSegue(withIdentifier: "productList", sender: categoryId)
+            
         }
         tableView.reloadData()
     }
@@ -112,8 +111,10 @@ class CategoriesTVC: UITableViewController {
         if segue.identifier == "productList",
            let destination = segue.destination as? ProductCollectionVC,
            let id = sender as? String {
+            destination.titleName = titleName
             destination.category_Id = id
             tableIndex = 1
         }
     }
+    
 }

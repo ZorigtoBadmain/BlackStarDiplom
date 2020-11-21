@@ -13,7 +13,7 @@ class CategoriesLoader {
     static let shared = CategoriesLoader()
     
     func loadCategories(completion: @escaping(_ data: [Category]) -> ()) {
-//        SVProgressHUD.show()
+
         let stringURL = "https://blackstarshop.ru/index.php?route=api/v1/categories"
         AF.request(stringURL).responseJSON { response in
             
@@ -28,12 +28,10 @@ class CategoriesLoader {
                             if !category.image.isEmpty {
                                 categories.append(category)
                             }
-//                            categories.append(category)
                         }
                     }
                     
                     completion(categories)
-//                    SVProgressHUD.dismiss()
                 }
             }
         }

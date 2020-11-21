@@ -74,8 +74,6 @@ struct ProductList {
         self.colorName = colorLabel
         self.price = priceLabel
         self.isEmpty = false
-        
-        
     }
     
     struct Offers {

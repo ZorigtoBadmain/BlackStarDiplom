@@ -46,5 +46,4 @@ class Persistance {
             realm.delete(item)
         }
     }
-    
 }

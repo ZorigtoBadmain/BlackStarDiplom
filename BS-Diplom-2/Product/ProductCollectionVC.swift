@@ -13,10 +13,12 @@ class ProductCollectionVC: UICollectionViewController {
     var category_Id: String = ""
     var product: [ProductList] = []
     var index = 0
+    var titleName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = titleName
         ProductLoader.shared.loadProduct(item: category_Id) { (data) in
             self.product = data
             self.collectionView.reloadData()

@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductCardVC: UIViewController {
-
+    
     @IBOutlet weak var productImagePageControl: UIPageControl!
     @IBOutlet weak var nameProductLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -24,7 +24,7 @@ class ProductCardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         addToCard.layer.cornerRadius = 10
         
         addDateInUI()
@@ -61,7 +61,7 @@ class ProductCardVC: UIViewController {
         if product.offers.count < 2 {
             let alert1 = UIAlertController(title: "Остался один размер", message: "\(product.offers[0].size)", preferredStyle: .actionSheet)
             let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-          
+            
             alert1.addAction(cancelAction)
             
             present(alert1, animated: true, completion: nil)
@@ -120,10 +120,7 @@ extension ProductCardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.selectRow = indexPath.row
-        
-        self.tableViewSizeAndColor.deselectRow(at: indexPath, animated: true)
         self.tableViewSizeAndColor.reloadData()
+        self.tableViewSizeAndColor.deselectRow(at: indexPath, animated: true)
     }
-   
-
 }
