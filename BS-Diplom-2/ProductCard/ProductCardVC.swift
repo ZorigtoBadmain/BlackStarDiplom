@@ -36,14 +36,25 @@ class ProductCardVC: UIViewController {
         tableViewSizeAndColor.delegate = self
         
         tableViewSizeAndColor.register(UINib(nibName: "SizeColorCell", bundle: nil), forCellReuseIdentifier: "SizeColorCell")
-        
-        for imageURL in product.productImages {
-            if let url = URL(string: "https://blackstarshop.ru/\(imageURL)") {
-                do {
-                    let data = try Data(contentsOf: url)
-                    dataImages.append(data)
-                } catch {
-                    print(error.localizedDescription)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadImageCollection()
+    }
+    
+    func loadImageCollection() {
+        DispatchQueue.main.async {
+            for imageURL in self.product.productImages {
+                if let url = URL(string: "https://blackstarshop.ru/\(imageURL)") {
+                    do {
+                        
+                        let data = try Data(contentsOf: url)
+                        self.dataImages.append(data)
+                        self.imageProductCollection.reloadData()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }
@@ -70,9 +81,26 @@ class ProductCardVC: UIViewController {
             let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
                 
                 let buyItem = ProductObject()
+                
                 buyItem.getData(name: self.product.name, colorName: self.product.colorName, mainImageLink: self.product.mainImage, size: self.product.offers[self.selectRow].size, price: self.product.price)
                 Persistance.shared.save(item: buyItem)
                 
+                //                if Persistance.shared.getItems().contains(buyItem) {
+                //
+                //                    buyItem.getData(name: self.product.name, colorName: self.product.colorName, mainImageLink: self.product.mainImage, size: self.product.offers[self.selectRow].size, price: self.product.price)
+                //                    Persistance.shared.save(item: buyItem)
+                //                } else {
+                ////                    buyItem.getData(name: self.product.name, colorName: self.product.colorName, mainImageLink: self.product.mainImage, size: self.product.offers[self.selectRow].size, price: self.product.price)
+                ////                    Persistance.shared.getItems().filter( { $0.name == buyItem.name }).first?.count += 1
+                ////                    Persistance.shared.save(item: buyItem)
+                ////                    Persistance.shared.getItems()[0].count += 1
+                //                    for item in Persistance.shared.getItems() {
+                //                        if item.name == Persistance.shared.getItems()[0].name {
+                //                            item.count += 1
+                //                            Persistance.shared.save(item: item)
+                //                        }
+                //                    }
+                //                }
             }
             alert.view.addSubview(tableViewSizeAndColor)
             alert.addAction(okAction)

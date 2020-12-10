@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class ProductObject: Object {
-//    @objc dynamic var id: String = ""
+    @objc dynamic var count: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var colorName: String = ""
     @objc dynamic var mainImageLink: String = ""

@@ -29,6 +29,7 @@ class BasketVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(items)
         shopingTableView.delegate = self
         shopingTableView.dataSource = self
         
